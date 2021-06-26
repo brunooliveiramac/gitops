@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/brunooliveiramac/gitops.git
+    targetRevision: HEAD
+    path: charts/istio-operator
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
