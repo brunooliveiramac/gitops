@@ -16,5 +16,5 @@ spec:
       jwksUri: http://keycloak-service.default.svc.cluster.local/auth/realms/bees-realm/protocol/openid-connect/certs
       forwardOriginalToken: true
     - issuer: "auth-service"
-      jwks: <rabbitmq_username>
+      jwks: <path:kv/data/microservice/price-service#rabbitmq_username>
       forwardOriginalToken: true
