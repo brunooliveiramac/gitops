@@ -2,7 +2,8 @@ apiVersion: security.istio.io/v1beta1
 kind: RequestAuthentication
 metadata:
   name: credit-relay-service-request-authentication
-
+  annotations:
+    avp.kubernetes.io/path: "kv/data/microservice/auth-service"
 spec:
   selector:
     matchLabels:
@@ -15,5 +16,5 @@ spec:
       jwksUri: http://keycloak-service.default.svc.cluster.local/auth/realms/bees-realm/protocol/openid-connect/certs
       forwardOriginalToken: true
     - issuer: "auth-service"
-      jwks: <path:kv/data/microservice/auth-service#credentials>
+      jwks: <credentials>
       forwardOriginalToken: true
