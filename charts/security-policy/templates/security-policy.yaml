@@ -1,0 +1,18 @@
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: credit-relay-service-request-authentication
+spec:
+  selector:
+    matchLabels:
+      app: credit-relay-service
+  jwtRules:
+    - issuer: https://login.microsoftonline.com/9c89de9e-e8e2-4516-887c-5fec487834e2/v2.0
+      jwksUri: https://login.microsoftonline.com/9c89de9e-e8e2-4516-887c-5fec487834e2/discovery/v2.0/keys
+      forwardOriginalToken: true
+    - issuer: http://keycloak-service/auth/realms/bees-realm
+      jwksUri: http://keycloak-service.default.svc.cluster.local/auth/realms/bees-realm/protocol/openid-connect/certs
+      forwardOriginalToken: true
+    - issuer: "auth-service"
+      jwks: "{\"keys\":[{\"kty\":\"oct\",\"kid\":\"secret\",\"k\":\"MjA3MzVkMzEtNDZiNS00MTFkLWFmMDItNDc4OTdhMDFjMGM5\",\"alg\":\"HS256\"}]}"
+      forwardOriginalToken: true
