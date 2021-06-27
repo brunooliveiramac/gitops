@@ -1,6 +1,0 @@
-kind: Chart
-apiVersion: v1
-appVersion: 1.0.0
-description: sample-secret
-name: sample-secret
-version: 1.0.0
