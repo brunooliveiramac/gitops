@@ -3,7 +3,7 @@ kind: RequestAuthentication
 metadata:
   name: credit-relay-service-request-authentication
   annotations:
-    avp.kubernetes.io/path: "kv/data/microservice/security-policy"
+    avp.kubernetes.io/path: "kv/data/microservice/price-service"
 spec:
   selector:
     matchLabels:
@@ -16,5 +16,5 @@ spec:
       jwksUri: http://keycloak-service.default.svc.cluster.local/auth/realms/bees-realm/protocol/openid-connect/certs
       forwardOriginalToken: true
     - issuer: "auth-service"
-      jwks: <private-key>
+      jwks: <rabbitmq_password>
       forwardOriginalToken: true
