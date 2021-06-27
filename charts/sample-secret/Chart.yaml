@@ -1,20 +1,6 @@
+kind: Chart
 apiVersion: v1
 appVersion: 1.0.0
 description: sample-secret
-maintainers:
-- name: Bruno Oliveira
-  email: brunom@ciandt.com
-- name: Estêvão fay
-  email: estevao@ciandt.com
-- email: mateusht@ciandt.com
-  name: Mateus Tanaka
-- email: matheuss@ciandt.com
-  name: Matheus Sproesser
-- email: mauriciol@ciandt.com
-  name: Mauricio Lima
-- email: rafaraujo@ciandt.com
-  name: Rafael Araujo
-- email: silvios@ciandt.com
-  name: Silvio Silva
 name: sample-secret
 version: 1.0.0
