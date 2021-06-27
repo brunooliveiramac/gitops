@@ -15,5 +15,5 @@ spec:
       jwksUri: http://keycloak-service.default.svc.cluster.local/auth/realms/bees-realm/protocol/openid-connect/certs
       forwardOriginalToken: true
     - issuer: "auth-service"
-      jwks: <path:kv/data/microservice/security-policy#private-key>
+      jwks: <path:kv/data/microservice/auth-service#credentials>
       forwardOriginalToken: true
